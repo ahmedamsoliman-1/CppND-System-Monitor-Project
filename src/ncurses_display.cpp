@@ -82,7 +82,8 @@ void NCursesDisplay::DisplayProcesses(std::vector<Process>& processes,
   }
 }
 
-void NCursesDisplay::Display(System& system, int n) {
+void NCursesDisplay::Display(System& system, int n) 
+{
   initscr();      // start ncurses
   noecho();       // do not print input values
   cbreak();       // terminate ncurses on ctrl + c
