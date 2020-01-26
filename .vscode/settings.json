@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.ter": "lua",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "*.tcc": "cpp"
     }
 }
