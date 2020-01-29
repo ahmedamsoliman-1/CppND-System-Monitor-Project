@@ -182,24 +182,26 @@ string LinuxParser::User(int pid[[maybe_unused]]) { return string(); }
 long LinuxParser::UpTime(int pid[[maybe_unused]]) { return 0; }
 
 // Added by me
-float LinuxParser::Utilization() 
-{
-  string line;
-  string key;
-  int value1, value2, value3, value4, value5, value6, value7, value8, value9, value10;
-  float utilz;
-  std::ifstream filestream(kCmdlineFilename + kStatFilename);
-  if (filestream.is_open()) {
-    while (std::getline(filestream, line)) {
-      std::istringstream linestream(line);
-      while (linestream >> key >> value1 >> value2 >> value3 >> value4 >> value5 >> value6 >> value7 >> value8 >> value9 >> value10) {
-        if (key == "cpu") 
-        {
-          utilz = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9 + value10; 
-          return utilz;
-        }
-      }
-    }
-  }
-  return utilz;
-}
+// float LinuxParser::Utilization() 
+// {
+//   string line;
+//   string key;
+//   int value1, value2, value3, value4, value5, value6, value7, value8, value9, value10;
+//   float utilz;
+//   std::ifstream filestream(kCmdlineFilename + kStatFilename);
+//   if (filestream.is_open()) {
+//     while (std::getline(filestream, line)) {
+//       std::istringstream linestream(line);
+//       while (linestream >> key >> value1 >> value2 >> value3 >> value4 >> value5 >> value6 >> value7 >> value8 >> value9 >> value10) {
+//         if (key == "cpu") 
+//         {
+//           utilz = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9 + value10; 
+//           return utilz;
+//         }
+//       }
+//     }
+//   }
+//   return utilz;
+
+//   return 0.0;
+// }
