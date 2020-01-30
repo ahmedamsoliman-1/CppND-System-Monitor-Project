@@ -12,11 +12,10 @@ using std::to_string;
 using std::vector;
 
 // TODO: Return this process's ID
-// Returning only one element from the vctor for now ! 
 int Process::Pid() 
 {
-    int pids = LinuxParser::Pids().back();
-    return pids;
+    int processPid = LinuxParser::Pids().back();
+    return processPid;
 }
 
 // TODO: Return this process's CPU utilization
@@ -26,11 +25,8 @@ float Process::CpuUtilization() { return 0; }
 string Process::Command() { return string(); }
 
 // TODO: Return this process's memory utilization
-string Process::Ram() 
-{
-    string proccessram = LinuxParser::Ram(pid);
-    return proccessram;
-}
+string Process::Ram() { return string(); }
+
 // TODO: Return the user (name) that generated this process
 string Process::User() { return string(); }
 
@@ -39,5 +35,4 @@ long int Process::UpTime() { return 0; }
 
 // TODO: Overload the "less than" comparison operator for Process objects
 // REMOVE: [[maybe_unused]] once you define the function
-bool Process::operator<(Process const& a[[maybe_unused]]) const 
-{ return true; }
+bool Process::operator<(Process const& a[[maybe_unused]]) const { return true; }

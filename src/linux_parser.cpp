@@ -11,8 +11,7 @@ using std::to_string;
 using std::vector;
 
 // DONE: An example of how to read data from the filesystem
-string LinuxParser::OperatingSystem() 
-{
+string LinuxParser::OperatingSystem() {
   string line;
   string key;
   string value;
@@ -36,13 +35,13 @@ string LinuxParser::OperatingSystem()
 
 // DONE: An example of how to read data from the filesystem
 string LinuxParser::Kernel() {
-  string os, version, kernel;
+  string os, kernel;
   string line;
   std::ifstream stream(kProcDirectory + kVersionFilename);
   if (stream.is_open()) {
     std::getline(stream, line);
     std::istringstream linestream(line);
-    linestream >> os >> version >> kernel;
+    linestream >> os >> kernel;
   }
   return kernel;
 }
@@ -105,6 +104,7 @@ long LinuxParser::UpTime()
   }
   return uptime;
 }
+
 // TODO: Read and return the number of jiffies for the system
 long LinuxParser::Jiffies() { return 0; }
 
@@ -161,7 +161,7 @@ string LinuxParser::Command(int pid[[maybe_unused]]) { return string(); }
 
 // TODO: Read and return the memory used by a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::Ram(int pid) 
+string LinuxParser::Ram(int pid) //[[maybe_unused]]) { return string(); }
 {
   string line;
   string key;
@@ -189,28 +189,3 @@ string LinuxParser::User(int pid[[maybe_unused]]) { return string(); }
 // TODO: Read and return the uptime of a process
 // REMOVE: [[maybe_unused]] once you define the function
 long LinuxParser::UpTime(int pid[[maybe_unused]]) { return 0; }
-
-// Added by me
-// float LinuxParser::Utilization() 
-// {
-//   string line;
-//   string key;
-//   int value1, value2, value3, value4, value5, value6, value7, value8, value9, value10;
-//   float utilz;
-//   std::ifstream filestream(kCmdlineFilename + kStatFilename);
-//   if (filestream.is_open()) {
-//     while (std::getline(filestream, line)) {
-//       std::istringstream linestream(line);
-//       while (linestream >> key >> value1 >> value2 >> value3 >> value4 >> value5 >> value6 >> value7 >> value8 >> value9 >> value10) {
-//         if (key == "cpu") 
-//         {
-//           utilz = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9 + value10; 
-//           return utilz;
-//         }
-//       }
-//     }
-//   }
-//   return utilz;
-
-//   return 0.0;
-// }
