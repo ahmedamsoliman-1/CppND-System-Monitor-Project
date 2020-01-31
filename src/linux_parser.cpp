@@ -157,8 +157,22 @@ int LinuxParser::RunningProcesses()
 
 // TODO: Read and return the command associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::Command(int pid[[maybe_unused]]) { return string(); }
-
+string LinuxParser::Command(int pid) //[[maybe_unused]]) { return string(); }
+{
+  string line;
+  string key;
+  string value;
+  string pidstring = to_string(pid);
+  std::ifstream filestream(kProcDirectory + pidstring + kCmdlineFilename);
+  if (filestream.is_open()) {
+    while (std::getline(filestream, line)) {
+  //     std::istringstream linestream(line);
+  //     while (linestream >> key >> value) {
+  //       if (key == "VmSize:") {
+  //         return value;
+  // }}}}
+  return line;
+}}}
 // TODO: Read and return the memory used by a process
 // REMOVE: [[maybe_unused]] once you define the function
 string LinuxParser::Ram(int pid) //[[maybe_unused]]) { return string(); }
@@ -180,11 +194,41 @@ string LinuxParser::Ram(int pid) //[[maybe_unused]]) { return string(); }
 
 // TODO: Read and return the user ID associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::Uid(int pid[[maybe_unused]]) { return string(); }
-
+string LinuxParser::Uid(int pid) //[[maybe_unused]]) { return string(); }
+{
+  string line, key, value;
+  string pidstring = to_string(pid);
+  std::ifstream filestream(kProcDirectory + pidstring + kStatusFilename);
+  if (filestream.is_open()) {
+    while(std::getline(filestream, line)){
+      std::istringstream linestream(line);
+      if (key == "Uid:") {
+        return value;
+  }}}
+  return value;
+}
 // TODO: Read and return the user associated with a process
 // REMOVE: [[maybe_unused]] once you define the function
-string LinuxParser::User(int pid[[maybe_unused]]) { return string(); }
+string LinuxParser::User(int pid) //[[maybe_unused]]) { return string(); }
+{
+  string line;
+  string key;
+  string value;
+  std::ifstream filestream(kPasswordPath);
+  if (filestream.is_open()) {
+    while (std::getline(filestream, line)) {
+      std::replace(line.begin(), line.end(), '/', ' ');
+      std::istringstream linestream(line);
+      while (linestream >> key >> value) {
+        if (key == "root:x:0:0:root:") {
+          std::replace(value.begin(), value.end(), ':', ' ');
+          return value;
+        }
+      }
+    }
+  }
+  return value;
+}
 
 // TODO: Read and return the uptime of a process
 // REMOVE: [[maybe_unused]] once you define the function
