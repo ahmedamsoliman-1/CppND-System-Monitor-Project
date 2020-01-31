@@ -19,13 +19,13 @@ const std::string kOSPath{"/etc/os-release"};
 const std::string kPasswordPath{"/etc/passwd"};
 
 // System
-float MemoryUtilization();
-long UpTime();
-std::vector<int> Pids();
-int TotalProcesses();
-int RunningProcesses();
-std::string OperatingSystem();
-std::string Kernel();
+float MemoryUtilization();          // return the system memory utilization       // Done -- at some point 
+long UpTime();                      // return the system uptim                    // Done 
+std::vector<int> Pids();            // Update this to use std::filesystem         // Done -- BONUS
+int TotalProcesses();               // return the total number of processes       // Done
+int RunningProcesses();             // return the number of running processes     // Done
+std::string OperatingSystem();      // read data from the filesystemDone example  // Done 
+std::string Kernel();               // read data from the filesystemDone example  // Done
 
 // CPU
 enum CPUStates {
@@ -40,11 +40,11 @@ enum CPUStates {
   kGuest_,
   kGuestNice_
 };
-std::vector<std::string> CpuUtilization();
-long Jiffies();
-long ActiveJiffies();
-long ActiveJiffies(int pid);
-long IdleJiffies();
+std::vector<std::string> CpuUtilization();    // return CPU utilization
+long Jiffies();                               // return the number of jiffies for the system
+long ActiveJiffies();                         // return the number of active jiffies for the system
+long ActiveJiffies(int pid);                  // return the number of active jiffies for a PID
+long IdleJiffies();                           // return the number of idle jiffies for the system
 
 // Processes
 std::string Command(int pid);     // Done , return command associated with a process              // used in Process with 1 as paramerter for now 

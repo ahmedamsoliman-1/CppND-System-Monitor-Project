@@ -3,7 +3,7 @@
 
 class Processor {
  public:
-  float Utilization();  // TODO: See src/processor.cpp
+  float Utilization();  // TODO: See src/processor.cpp              // Return the aggregate CPU utilization
 
   // TODO: Declare any necessary private members
  private:
