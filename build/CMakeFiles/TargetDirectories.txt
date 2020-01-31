@@ -1,0 +1,3 @@
+/root/AHMED/NANO/CppND-System-Monitor-Project/build/CMakeFiles/rebuild_cache.dir
+/root/AHMED/NANO/CppND-System-Monitor-Project/build/CMakeFiles/monitor.dir
+/root/AHMED/NANO/CppND-System-Monitor-Project/build/CMakeFiles/edit_cache.dir
