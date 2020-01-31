@@ -233,7 +233,7 @@ string LinuxParser::User(int pid) //[[maybe_unused]]) { return string(); }
 // TODO: Read and return the uptime of a process
 // REMOVE: [[maybe_unused]] once you define the function
 long LinuxParser::UpTime(int pid) //[[maybe_unused]]) { return 0; }
-{
+{{
   long _1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20, uptime;
   string line;
   string pidstring = to_string(pid);
@@ -244,4 +244,4 @@ long LinuxParser::UpTime(int pid) //[[maybe_unused]]) { return 0; }
     linestream >> _1>>_2>>_3>>_4>>_5>>_6>>_7>>_8>>_9>>_10>>_11>>_12>>_13>>_14>>_15>>_16>>_17>>_18>>_19>>_20 >> uptime;
   }
   return uptime;
-}
+}}
