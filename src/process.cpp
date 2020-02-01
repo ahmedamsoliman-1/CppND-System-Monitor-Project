@@ -14,43 +14,48 @@ using std::vector;
 // TODO: Return this process's ID
 int Process::Pid() 
 {
-    return LinuxParser::Pids().back();
+    return pid_;
 }
 
 // TODO: Return this process's CPU utilization
 float Process::CpuUtilization() 
 { 
-    return 0;
+    return cpuutilization_;
 }
 
 // TODO: Return the command that generated this process
 string Process::Command() 
 {
-    return LinuxParser::Command(1);
+    return command_;
     //return command_;
 }
 
 // TODO: Return this process's memory utilization
 string Process::Ram() 
 {
-    return LinuxParser::Ram(1);
+    return ram_;
     //return string();
 }
 
 // TODO: Return the user (name) that generated this process
 string Process::User() 
 {
-    return LinuxParser::User(1);    
+    return user_;
     //return string();
 }
 
 // TODO: Return the age of this process (in seconds)
 long int Process::UpTime() 
 {
-    return LinuxParser::UpTime(1);
+    return uptime_;
     //return uptime_;
 }
 
 // TODO: Overload the "less than" comparison operator for Process objects
 // REMOVE: [[maybe_unused]] once you define the function
-bool Process::operator<(Process const& a[[maybe_unused]]) const { return true; }
+//bool Process::operator<(Process const& a[[maybe_unused]]) const { return true; }
+
+
+bool Process::operator>(Process const& a) const { 
+    return stoi(this->ram_) > stoi(a.ram_); 
+}

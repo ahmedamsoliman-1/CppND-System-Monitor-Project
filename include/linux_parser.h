@@ -53,7 +53,7 @@ std::string Uid(int pid);         // Done , return user ID associated with a pro
 std::string User(int pid);        // Done , return the user associated with a process             // used in Process with 1 as paramerter for now
 long int UpTime(int pid);         // Done , return the uptime of a processv (bad implementation)  // used in Process with 1 as paramerter for now
 
-
+float Cpu(int pid);
 };  // namespace LinuxParser
 
 #endif
