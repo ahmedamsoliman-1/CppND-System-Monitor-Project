@@ -13,5 +13,4 @@ float Processor::Utilization()
     idle = idle - prev_idle;
     nonidle = nonidle - prev_nonidle;
     return (float) nonidle / (nonidle + idle);
-
 }

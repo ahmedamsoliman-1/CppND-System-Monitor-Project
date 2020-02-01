@@ -18,17 +18,16 @@ class Process {
       uptime_ = LinuxParser::UpTime(pid_);
   }
 
-  int Pid();                               // TODO: See src/process.cpp     , Done: Return this process's ID    , return one (back) pid for now !!!!
+  int Pid();                               // TODO: See src/process.cpp     , Done: Return this process's ID   
   std::string User();                      // TODO: See src/process.cpp     , Done: Return the user (name) that generated this process
   std::string Command();                   // TODO: See src/process.cpp     , Done: Return the command that generated this process
-  float CpuUtilization();                  // TODO: See src/process.cpp     
+  float CpuUtilization();                  // TODO: See src/process.cpp     , Done: Return this process's CPU utilization
   std::string Ram();                       // TODO: See src/process.cpp     , Done: Return this process's memory utilization        
   long int UpTime();                       // TODO: See src/process.cpp     , Done: Return the age of this process (in seconds)
-  bool operator>(Process const& a) const;  // TODO: See src/process.cpp
+  bool operator>(Process const& a) const;  // TODO: See src/process.cpp     , Done: Overload the "less than" comparison operator for Process objects
 
   // TODO: Declare any necessary private members
  private:
-
   int pid_;
   float cpuutilization_;
   std::string ram_;

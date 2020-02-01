@@ -9,7 +9,8 @@ using std::to_string;
 // INPUT: Long int measuring seconds
 // OUTPUT: HH:MM:SS
 // REMOVE: [[maybe_unused]] once you define the function
-string Format::ElapsedTime(long seconds) {
+string Format::ElapsedTime(long seconds) 
+{
     int h, m, s;
     h = seconds / 3600;
     m = (seconds % 3600) / 60;

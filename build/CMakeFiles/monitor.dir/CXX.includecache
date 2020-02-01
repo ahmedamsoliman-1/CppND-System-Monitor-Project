@@ -6,13 +6,23 @@
 
 #IncludeRegexTransform: 
 
-../include/format.h
+../include/linux_parser.h
+fstream
+-
+regex
+-
 string
 -
 
-/root/AHMED/NANO/CppND-System-Monitor-Project/src/format.cpp
+/root/AHMED/NANO/CppND-System-Monitor-Project/src/linux_parser.cpp
+dirent.h
+-
+unistd.h
+-
 string
 -
-format.h
-/root/AHMED/NANO/CppND-System-Monitor-Project/src/format.h
+vector
+-
+linux_parser.h
+/root/AHMED/NANO/CppND-System-Monitor-Project/src/linux_parser.h
 
