@@ -8,6 +8,7 @@ CMakeFiles/monitor.dir/src/linux_parser.cpp.o
  ../include/linux_parser.h
  /root/AHMED/NANO/CppND-System-Monitor-Project/src/linux_parser.cpp
 CMakeFiles/monitor.dir/src/main.cpp.o
+ ../include/linux_parser.h
  ../include/ncurses_display.h
  ../include/process.h
  ../include/processor.h
@@ -15,6 +16,7 @@ CMakeFiles/monitor.dir/src/main.cpp.o
  /root/AHMED/NANO/CppND-System-Monitor-Project/src/main.cpp
 CMakeFiles/monitor.dir/src/ncurses_display.cpp.o
  ../include/format.h
+ ../include/linux_parser.h
  ../include/ncurses_display.h
  ../include/process.h
  ../include/processor.h
